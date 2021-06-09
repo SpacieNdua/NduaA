@@ -113,7 +113,7 @@ public class Table_2 {
                 }
         }
     });}
-    public static void main(String[] args)
+    public static <JSONParser> void main(String[] args)
     {
         JFrame frame = new JFrame("Saves");
         frame.setContentPane(new Table_2().Panel_1);
@@ -123,42 +123,39 @@ public class Table_2 {
 
         //Trial Creation of a JSONParser object
 
-        JSONParser jsonParser = new JSONParser();
-        try {
+       // JSONParser jsonParser = new JSONParser();
+       // try {
 
 
 
             //Parsing the contents of the JSON file
-            JSONObject jsonObject = (JSONObject) jsonParser.parse(new FileReader("E:/table2.json"));
+            //JSONObject jsonObject = (JSONObject) jsonParser.getClass());
             //Retrieving the array
-            JSONArray jsonArray = (JSONArray) jsonObject.get("table2");
+            //JSONArray jsonArray = (JSONArray) jsonObject.get("table2");
 
             //Insert a row into the table2 UI
-            PreparedStatement stmt = null;
-            String sql = "INSERT INTO nameTable (table2) values (?)";
-            for(Object object : jsonArray) {
-                JSONObject record = (JSONObject) object;
-                String Name = (String) record.get("StudentName");
-                String School_ID = (String) record.get("SchoolID");
-                String Student_Name = (String) record.get("School Name");
-                int marks  = (int) record.get("marks");
+            //PreparedStatement stmt = null;
+            //String sql = "INSERT INTO nameTable (table2) values (?)";
+            //for(Object object : jsonArray) {
+               // JSONObject record = (JSONObject) object;
+               // String Name = (String) record.get("StudentName");
+              //  String School_ID = (String) record.get("SchoolID");
+               // String Student_Name = (String) record.get("School Name");
+              //  int marks  = (int) record.get("marks");
 
-                stmt.setInt(1, marks);
-                stmt.setString(2, Name);
-                stmt.setString(3, School_ID);
-                stmt.setString(6, Student_Name);
-                stmt.executeUpdate();
-            }
+              //  stmt.setInt(1, marks);
+              //  stmt.setString(2, Name);
+               // stmt.setString(3, School_ID);
+               // stmt.setString(6, Student_Name);
+               // stmt.executeUpdate();
 
-            System.out.println("Records inserted.....");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+
+            //System.out.println("Records inserted.....");
+         //catch (FileNotFoundException e) {
+           // e.printStackTrace();
+        // catch (IOException e) {
+         //   e.printStackTrace();
+
     }
 
 }
